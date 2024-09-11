@@ -20,7 +20,7 @@ RUN yarn install
 COPY . .
 
 # 构建所有包
-RUN yarn workspaces run build
+RUN yarn run build
 
 WORKDIR /app/apps/tracker
 RUN yarn build
