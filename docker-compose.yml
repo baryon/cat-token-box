@@ -13,9 +13,9 @@ services:
       - LETSENCRYPT_HOST=cat.mydapp.io
       - LETSENCRYPT_EMAIL=lilong@gmail.com
     build:
-      context: ../../
+      context: ./
       args:
-        - FILE=./.env
+        - FILE=.env
     volumes:
       - ./docker/logs/tracker:/app/logs
     ports:
