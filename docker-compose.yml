@@ -17,7 +17,7 @@ services:
       args:
         - FILE=.env
     volumes:
-      - ./docker/logs/tracker:/app/logs
+      - ./packages/tracker/docker/logs/tracker:/app/logs
     ports:
       - "4000:4000"
 
@@ -32,7 +32,7 @@ services:
     ports:
       - "6432:5432"
     volumes:
-      - ./docker/pgdata:/var/lib/postgresql/data
+      - ./packages/tracker/docker/pgdata:/var/lib/postgresql/data
 
   cat_bitcoind:
     image: fractalbitcoin/fractal:v0.2.1
@@ -53,7 +53,7 @@ services:
     memswap_limit: 60G
     mem_swappiness: 100
     volumes:
-      - ./docker/data:/data
+      - ./packages/tracker/docker/data:/data
     logging:
       driver: "json-file"
       options:
