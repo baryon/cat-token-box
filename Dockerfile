@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . /app/
 RUN yarn install && yarn build 
 
-WORKDIR /app/packages/tracker
+WORKDIR /app/apps/tracker
 RUN yarn install && yarn build
 
 EXPOSE 4000
