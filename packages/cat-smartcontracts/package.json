@@ -6,10 +6,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run clean && npm run build && npm run compile",
+    "build": "tsc && pnpm run compile",
     "deploy": "npx ts-node ./deploy.ts",
-    "clean": "rimraf scrypt.index.json && rimraf dist && rimraf artifacts && mkdir artifacts",
+    "clean": "git clean -xdf .turbo node_modules dist scrypt.index.json artifacts && mkdir artifacts",
     "compile": "npx scrypt-cli compile",
     "_pretest": "npm run build",
     "test": "npm run test:mocha",
