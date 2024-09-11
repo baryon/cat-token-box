@@ -17,5 +17,9 @@ COPY . .
 
 # 构建所有包
 RUN yarn workspaces run build
+
+WORKDIR /app/apps/tracker
+RUN yarn install && yarn build
+
 EXPOSE 4000
 CMD ["yarn", "start:prod"]
