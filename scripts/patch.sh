@@ -3,6 +3,6 @@
 set -e
 
 
-cd ./node_modules/scryptlib
+# cd ./node_modules/scryptlib
 
-node ./postinstall.js
+# node ./postinstall.js
