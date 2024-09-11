@@ -1,5 +1,28 @@
 services:
-  postgres:
+  note_openapi:
+    container_name: cat_tracker
+    depends_on:
+      - cat_postgres
+      - cat_bitcoind
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - VIRTUAL_HOST=cat.mydapp.io
+      - VIRTUAL_PORT=4000
+      - LETSENCRYPT_HOST=cat.mydapp.io
+      - LETSENCRYPT_EMAIL=lilong@gmail.com
+    build:
+      context: ./
+      args:
+        - FILE=.env
+    command: yarn run start
+    volumes:
+      - ./docker/logs/tracker:/app/logs
+    ports:
+      - "4000:4000"
+
+  cat_postgres:
     image: postgres:16
     restart: always
     environment:
@@ -8,10 +31,11 @@ services:
       POSTGRES_DB: $DATABASE_DB
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
-      - "5432:5432"
+      - "6432:5432"
     volumes:
       - ./docker/pgdata:/var/lib/postgresql/data
-  bitcoind:
+
+  cat_bitcoind:
     image: fractalbitcoin/fractal:v0.2.1
     restart: always
     entrypoint: ["bitcoind", "-datadir=/data/", "-maxtipage=504576000"]
@@ -19,10 +43,10 @@ services:
     healthcheck:
       test: ["CMD", "bitcoin-cli", "-datadir=/data/", "getblockchaininfo"]
     ports:
-      - "8330:8330"
-      - "8331:8331"
-      - "8332:8332"
-      # - "8333:8333"
+      - "9330:8330"
+      - "9331:8331"
+      - "9332:8332"
+      - "9333:8333"
     deploy:
       resources:
         limits:
