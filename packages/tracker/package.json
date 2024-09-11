@@ -1,7 +1,7 @@
 {
   "name": "@cat-protocol/cat-tracker",
   "version": "0.1.0",
-  "description": "",
+  "description": "a tracker for cat protocol",
   "author": "catprotocol.org",
   "private": true,
   "license": "MIT",
