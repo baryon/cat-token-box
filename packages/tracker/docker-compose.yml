@@ -22,7 +22,7 @@ services:
       - "8330:8330"
       - "8331:8331"
       - "8332:8332"
-      - "8333:8333"
+      # - "8333:8333"
     deploy:
       resources:
         limits:
@@ -37,3 +37,8 @@ services:
         labels: "env,filebeat,name"
         max-size: "1g"
         max-file: "3"
+
+networks:
+  default:
+    name: shared
+    external: true
