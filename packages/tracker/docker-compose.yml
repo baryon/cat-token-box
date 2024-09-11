@@ -1,5 +1,5 @@
 services:
-  note_openapi:
+  cat_tracker:
     container_name: cat_tracker
     depends_on:
       - cat_postgres
