@@ -5,7 +5,7 @@ ENV TZ=Asia/Shanghai
 
 RUN apt update
 RUN apt install vim -y
-RUN npm i -g ts-node typescript
+RUN npm i -g ts-node typescript @nestjs/cli
 
 WORKDIR /app
 
