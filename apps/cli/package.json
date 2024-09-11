@@ -33,6 +33,7 @@
     "bigi": "^1.4.2",
     "bip32": "^4.0.0",
     "bip39": "^3.1.0",
+    "bitcore-lib-inquisition": "^10.0.30",
     "cbor": "^9.0.2",
     "decimal.js": "^10.4.3",
     "dotenv": "^16.4.5",
