@@ -18,4 +18,4 @@ COPY . .
 # 构建所有包
 RUN yarn workspaces run build
 EXPOSE 4000
-# CMD ["yarn", "start:prod"]
+CMD ["yarn", "start:prod"]

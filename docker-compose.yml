@@ -17,7 +17,7 @@ services:
       args:
         - FILE=.env
     working_dir: /app/apps/tracker
-    command: yarn start
+    command: yarn start:prod
     volumes:
       - ./apps/tracker/docker/logs/tracker:/app/logs
     ports:
