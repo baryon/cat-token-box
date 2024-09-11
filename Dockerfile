@@ -12,7 +12,6 @@ WORKDIR /app
 # 复制 package.json 文件
 COPY package.json yarn.lock ./
 COPY apps/cli/package.json ./apps/cli/
-COPY scripts ./scripts  # Add this line
 
 # 安装依赖
 RUN yarn install
