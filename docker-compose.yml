@@ -16,10 +16,10 @@ services:
       context: ./
       args:
         - FILE=.env
-    working_dir: /app/packages/tracker
+    working_dir: /app/apps/tracker
     command: yarn start
     volumes:
-      - ./packages/tracker/docker/logs/tracker:/app/logs
+      - ./apps/tracker/docker/logs/tracker:/app/logs
     ports:
       - "4000:4000"
 
@@ -34,7 +34,7 @@ services:
     ports:
       - "6432:5432"
     volumes:
-      - ./packages/tracker/docker/pgdata:/var/lib/postgresql/data
+      - ./apps/tracker/docker/pgdata:/var/lib/postgresql/data
 
   cat_bitcoind:
     image: fractalbitcoin/fractal:v0.2.1
@@ -55,7 +55,7 @@ services:
     memswap_limit: 60G
     mem_swappiness: 100
     volumes:
-      - ./packages/tracker/docker/data:/data
+      - ./apps/tracker/docker/data:/data
     logging:
       driver: "json-file"
       options:
