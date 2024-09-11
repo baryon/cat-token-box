@@ -16,6 +16,7 @@ services:
       context: ./
       args:
         - FILE=.env
+    command: cd packages/tracker && yarn start
     volumes:
       - ./packages/tracker/docker/logs/tracker:/app/logs
     ports:

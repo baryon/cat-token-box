@@ -11,4 +11,4 @@ WORKDIR /app/packages/tracker
 RUN yarn install && yarn build
 
 EXPOSE 4000
-CMD ["yarn", "start:prod"]
+# CMD ["yarn", "start:prod"]
