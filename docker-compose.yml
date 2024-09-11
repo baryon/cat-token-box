@@ -19,7 +19,7 @@ services:
     working_dir: /app/apps/tracker
     command: pnpm start:prod
     volumes:
-      - ./docker/logs/tracker:/app/logs
+      - ./docker/log/tracker:/app/logs
     ports:
       - "4000:4000"
 
